@@ -1,0 +1,43 @@
+<div class="container mt-5">
+  <!--<h2>User list</h2>
+  <p>Below data is fetched from an API.</p>-->
+  
+  <div class="alert alert-warning">We are using <a href="https://jsonplaceholder.typicode.com/" target="__blank">https://jsonplaceholder.typicode.com/</a> for our REST API. Data that you add/edit below is not actually saved !! However the API sends response as if it actually was.</div>
+  
+  <div class="row">
+    <div class="col-md-4">
+      <app-user-form [user]="userToEdit" (updateUserList)="getUsers($event)"></app-user-form>
+    </div>
+    <div class="col-md-8">
+      <div class="table-responsive">
+        <table class="table">
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Actions</th>
+          </tr>
+          <tr *ngIf="loading">
+            <td colspan="6">
+              <div class="alert alert-warning"><i class="fa fa-circle-notch fa-spin"></i> Loading...</div>
+            </td>
+          </tr>
+          <tr *ngFor="let user of users">
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.phone }}</td>
+            <td>
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary" (click)="editUser(user)"><i class="fa fa-edit"></i></button>
+                <button type="button" class="btn btn-danger"><i class="fa fa-trash-alt"></i></button>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+    </div>
+  </div>
+</div>
