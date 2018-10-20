@@ -1,7 +1,7 @@
 # angular-quickstart-skeleton-app - Sample code to help you get started with your next Angular App
 
 This is a bare minimum skeleton app for starting your next Angular application.
-It covers most of the key features of Angular that you use in a typical Angular App. 
+It covers most of the key features of Angular that you would use in a typical Angular App. 
 
 ## Installation
 ```
